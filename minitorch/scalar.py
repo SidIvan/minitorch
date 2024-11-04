@@ -163,6 +163,8 @@ class Scalar:
         assert h.last_fn is not None
         assert h.ctx is not None
         d_inputs = h.last_fn.backward(h.ctx, d_output)
+        if type(d_inputs) is not tuple:
+            d_inputs = tuple([d_inputs])
         for input, d_input in zip(h.inputs, d_inputs):
             yield input, d_input
 
