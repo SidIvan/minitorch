@@ -92,7 +92,7 @@ class Scalar:
         return Mul.apply(b, Inv.apply(self))
 
     def __add__(self, b: ScalarLike) -> Scalar:
-       return Add.apply(self, b)
+        return Add.apply(self, b)
 
     def __bool__(self) -> bool:
         return bool(self.data)
