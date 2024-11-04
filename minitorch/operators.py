@@ -13,69 +13,85 @@ from typing import Callable, Iterable
 def mul(x, y):
     return x * y
 
+
 def id(x):
     return x
+
 
 def add(x, y):
     return x + y
 
+
 def neg(x):
     return -x
+
 
 def lt(x, y):
     if x < y:
         return True
     return False
 
+
 def eq(x, y):
     if x == y:
         return True
     return False
+
 
 def max(x, y):
     if x > y:
         return x
     return y
 
+
 def is_close(x, y):
     return abs(x - y) < 1e-2
 
+
 def sigmoid(x):
     return 1.0 / (1.0 + math.exp(-x))
+
 
 def relu(x):
     if x > 0:
         return x
     return 0
 
+
 EPS = 1e-6
+
 
 def log(x: float) -> float:
     "$f(x) = log(x)$"
     return math.log(x + EPS)
 
+
 def exp(x: float) -> float:
     "$f(x) = e^{x}$"
     return math.exp(x)
 
-def log_back(x: float, d: float) -> float:
-    r"If $f = log$ as above, compute $d \times f'(x)$"
-    # TODO: Implement for Task 0.1.
-    raise NotImplementedError('Need to implement for Task 0.1')
 
 def log_back(x, d):
     return d / x
 
+
+def log_back(x, d):
+    return d / x
+
+
 def inv(x):
     return 1 / x
 
+
 def inv_back(x, d):
     return -d / x ** 2
+
 
 def relu_back(x, d):
     if x > 0:
         return d
     return 0.0
+
 
 def sigmoid_back(x, d):
     return d * exp(-x) / ((1 + exp(-x)) ** 2)
