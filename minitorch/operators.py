@@ -10,35 +10,35 @@ from typing import Callable, Iterable
 # Implementation of a prelude of elementary functions.
 
 
-def mul(x, y):
+def mul(x, y) -> float:
     return x * y
 
 
-def id(x):
+def id(x) -> float:
     return x
 
 
-def add(x, y):
+def add(x, y) -> float:
     return x + y
 
 
-def neg(x):
-    return -x
+def neg(x) -> float:
+    return -float(x)
 
 
-def lt(x, y):
+def lt(x, y) -> float:
     if x < y:
-        return True
-    return False
+        return 1.0
+    return 0.0
 
 
-def eq(x, y):
+def eq(x, y) -> float:
     if x == y:
-        return True
-    return False
+        return 1.0
+    return 0.0
 
 
-def max(x, y):
+def max(x, y) -> float:
     if x > y:
         return x
     return y
@@ -48,14 +48,14 @@ def is_close(x, y):
     return abs(x - y) < 1e-2
 
 
-def sigmoid(x):
+def sigmoid(x) -> float:
     return 1.0 / (1.0 + math.exp(-x))
 
 
-def relu(x):
+def relu(x) -> float:
     if x > 0:
         return x
-    return 0
+    return 0.0
 
 
 EPS = 1e-6
@@ -71,25 +71,25 @@ def exp(x: float) -> float:
     return math.exp(x)
 
 
-def log_back(x, d):
+def log_back(x, d) -> float:
     return d / x
 
 
-def inv(x):
+def inv(x) -> float:
     return 1 / x
 
 
-def inv_back(x, d):
+def inv_back(x, d) -> float:
     return -d / x ** 2
 
 
-def relu_back(x, d):
+def relu_back(x, d) -> float:
     if x > 0:
         return d
     return 0.0
 
 
-def sigmoid_back(x, d):
+def sigmoid_back(x, d) -> float:
     return d * exp(-x) / ((1 + exp(-x)) ** 2)
 
 
