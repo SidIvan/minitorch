@@ -75,10 +75,6 @@ def log_back(x, d):
     return d / x
 
 
-def log_back(x, d):
-    return d / x
-
-
 def inv(x):
     return 1 / x
 
