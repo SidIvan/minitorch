@@ -130,3 +130,4 @@ def sum(array):
 
 def prod(array):
     return reduce(mul, 1)(array)
+   
