@@ -65,7 +65,7 @@ def topological_sort(variable: Variable) -> Iterable[Variable]:
     Returns:
         Non-constant Variables in topological order starting from the right.
     """
-    
+
     sorted_vars = []
     dfs(variable, sorted_vars)
     return reversed(sorted_vars)
