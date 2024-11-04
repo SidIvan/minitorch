@@ -54,8 +54,7 @@ class Module:
             parameters.append((parent_module_parameter_name_prefix + parameter_name, parameter_value))
         for submodule_name, submodule in self._modules.items():
             parameters += submodule.named_parameters(parent_module_parameter_name_prefix + submodule_name + ".")
-        return parameters        
-
+        return parameters
 
     def parameters(self) -> Sequence[Parameter]:
         "Enumerate over all the parameters of this module and its descendents."
