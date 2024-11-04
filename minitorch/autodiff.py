@@ -25,7 +25,7 @@ def central_difference(f: Any, *vals: Any, arg: int = 0, epsilon: float = 1e-6) 
     function_arguments = list(vals)
     function_arguments[arg] += epsilon
     f_plus = f(*function_arguments)
-    function_arguments[arg] -= 2*epsilon
+    function_arguments[arg] -= 2 * epsilon
     f_minus = f(*function_arguments)
     return (f_plus - f_minus) / (2 * epsilon)
 
