@@ -138,7 +138,7 @@ def test_distribute(a: float, b: float, c: float) -> None:
     r"""Write a test that ensures that your operators distribute, i.e.
     :math:`z \times (x + y) = z \times x + z \times y`
     """
-    assert mul(a, add(b, c)) == mul(a, b) + mul(a, c)
+    assert_close(mul(a, add(b, c)), mul(a, b) + mul(a, c))
 
 
 @pytest.mark.task0_2
